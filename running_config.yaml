@@ -1,5 +1,5 @@
 ---
-- hosts: ios
+- hosts: infra-inv
   gather_facts: no
   connection: local
 
