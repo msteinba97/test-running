@@ -13,12 +13,3 @@
       copy:
         src: "{{config_output.backup_path}}"
         dest: "{{config_output.backup_path}}"
-        
-    - local_action:
-           module: ftp
-           host: 10.16.17.89
-           user: ansible
-           password: ansible
-           src: "{{config_output.backup_path}}"
-           dest: /{{inventory_hostname}}.config
-           direction: push
