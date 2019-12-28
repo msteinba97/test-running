@@ -1,0 +1,15 @@
+---
+- hosts: ios
+  gather_facts: no
+  connection: local
+
+  tasks:
+    - name: BACKUP THE CONFIG
+      ios_config:
+        backup: yes
+      register: config_output
+
+    - name: RENAME BACKUP
+      copy:
+        src: "{{config_output.backup_path}}"
+        dest: "/etc/ansible/backups/{{inventory_hostname}}.config"
