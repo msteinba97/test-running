@@ -12,7 +12,7 @@
     - name: RENAME BACKUP
       copy:
         src: "{{config_output.backup_path}}"
-        # dest: "/etc/ansible/backups/{{inventory_hostname}}.config"
+        dest: "{{config_output.backup_path}}"
         
     - local_action:
            module: ftp
